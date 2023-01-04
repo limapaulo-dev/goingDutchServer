@@ -12,14 +12,24 @@ passport.use(
       clientSecret: keys.googleClientSecret,
       callbackURL: '/auth/google/callback',
     },
-    (accessToken) => console.log(accessToken)
+    (accessToken, refreshToken, profile, done) => {
+        console.log('access token', accessToken);
+        console.log('refresh token', refreshToken);
+        console.log('profile', profile);
+        console.log('done', done);
+    }
   )
 );
 
 
 //route handler '/' none - test
 app.get('/', (req, res) => {
-    res.send({hi:'there'})
+    res.send({hi:'hey you!'})
+});
+
+//route handler simple test
+app.get('/test', (req, res) => {
+  res.send({stuff:'yeah this is a lot of stuff'})
 });
 
 //route handler google auth
