@@ -6,9 +6,13 @@ module.exports = (app) => {
   app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
   //route handler google auth callback - passport validades the information returned by google
-  app.get('/auth/google/callback', passport.authenticate('google'), (res, req) => {
-    res.redirect('/surveys');
-  });
+  app.get(
+    '/auth/google/callback', 
+    passport.authenticate('google'), 
+    (req, res) => {
+      res.redirect('/surveys');
+    }
+  );
 
   //logout
   app.get('/api/logout', (req, res) => {
