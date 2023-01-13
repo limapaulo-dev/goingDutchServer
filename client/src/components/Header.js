@@ -7,14 +7,26 @@ class Header extends Component {
       case null:
         return;
       case false:
-        return <li><a className="btn waves-effect waves-light deep-orange darken-1" href="/auth/google">login</a></li>;
+        return (
+          <li>
+            <a className="btn waves-effect waves-light deep-orange darken-1" href="/auth/google">
+              login
+            </a>
+          </li>
+        );
       default:
-        return <li><a className="btn waves-effect waves-light white deep-orange-text text-darken-1" href="/api/logout">logout</a></li>;
+        return (
+          <li>
+            <a className="btn waves-effect waves-light white deep-orange-text text-darken-1" href="/api/logout">
+              logout
+            </a>
+          </li>
+        );
     }
   }
   render() {
     return (
-      <div className="row">
+      <header className="row">
         <nav>
           <div className="nav-wrapper deep-orange darken-1">
             <div className="col s12">
@@ -26,6 +38,9 @@ class Header extends Component {
               </a>
               <ul className="right hide-on-med-and-down">
                 <li>
+                  <a href="nightmode.html">nightmode</a>
+                </li>
+                <li>
                   <a href="about.html">about</a>
                 </li>
                 <li>
@@ -35,22 +50,20 @@ class Header extends Component {
               </ul>
               <ul className="sidenav" id="mobile-demo">
                 <li>
-                  <a href="sass.html">Sass</a>
+                  <a href="nightmode.html">nightmode</a>
                 </li>
                 <li>
-                  <a href="badges.html">Components</a>
+                  <a href="about.html">about</a>
                 </li>
                 <li>
-                  <a href="collapsible.html">Javascript</a>
+                  <a href="contact.html">contact</a>
                 </li>
-                <li>
-                  <a href="mobile.html">Mobile</a>
-                </li>
+                {this.renderContent()}
               </ul>
             </div>
           </div>
         </nav>
-      </div>
+      </header>
     );
   }
 }
