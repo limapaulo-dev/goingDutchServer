@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class Header extends Component {
@@ -30,13 +31,29 @@ class Header extends Component {
         <nav>
           <div className="nav-wrapper deep-orange darken-1">
             <div className="col s12">
-              <a href="#!" className="valign-wrapper left">
+              <Link to={
+                this.props.auth ? '/dashboard' : '/'
+                } 
+                className="valign-wrapper left">
                 Going Dutch
-              </a>
-              <a href="#" data-target="mobile-demo" className="sidenav-trigger right">
+              </Link>
+              {/* <a href="#" data-target="mobile-demo" className="sidenav-trigger right">
                 <i className="material-icons">menu</i>
-              </a>
-              <ul className="right hide-on-med-and-down">
+              </a> */}
+              {/* <ul className="right hide-on-med-and-down"> */}
+              <ul className="right">
+                <li>
+                  <a href="nightmode.html">funding</a>
+                </li>
+                <li>
+                  <a href="about.html">about</a>
+                </li>
+                <li>
+                  <a href="contact.html">contact</a>
+                </li>
+                {this.renderContent()}
+              </ul>
+              {/* <ul className="sidenav" id="mobile-demo">
                 <li>
                   <a href="nightmode.html">nightmode</a>
                 </li>
@@ -47,19 +64,7 @@ class Header extends Component {
                   <a href="contact.html">contact</a>
                 </li>
                 {this.renderContent()}
-              </ul>
-              <ul className="sidenav" id="mobile-demo">
-                <li>
-                  <a href="nightmode.html">nightmode</a>
-                </li>
-                <li>
-                  <a href="about.html">about</a>
-                </li>
-                <li>
-                  <a href="contact.html">contact</a>
-                </li>
-                {this.renderContent()}
-              </ul>
+              </ul> */}
             </div>
           </div>
         </nav>
