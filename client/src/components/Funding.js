@@ -11,7 +11,7 @@ class Funding extends Component {
       name="Going Dutch" 
       currency="USD" 
       panelLabel="Fake tip in ;)" 
-      description="This is just a pay system demo" 
+      description="This is just a pay system demonstration" 
       image="goingDutchCirc.svg" 
       amount={100} 
       token={(token) => this.props.handleToken(token)} 

@@ -32,10 +32,7 @@ class Header extends Component {
         <nav>
           <div className="nav-wrapper deep-orange darken-1">
             <div className="col s12">
-              <Link to={
-                this.props.auth ? '/dashboard' : '/'
-                } 
-                className="valign-wrapper left">
+              <Link to={this.props.auth ? '/dashboard' : '/'} className="valign-wrapper left">
                 Going Dutch
               </Link>
               {/* <a href="#" data-target="mobile-demo" className="sidenav-trigger right">
@@ -44,14 +41,17 @@ class Header extends Component {
               {/* <ul className="right hide-on-med-and-down"> */}
               <ul className="right">
                 <li>
-                  <a href="about.html">about</a>
+                  <a href="/privacy">privacy</a>
                 </li>
                 <li>
-                  <a href="contact.html">contact</a>
+                  <a href="/about">about</a>
+                </li>
+                <li>
+                  <a href="/contact">contact</a>
                 </li>
                 <li>
                   {/* <a href="funding.html">funding</a> */}
-                  <Funding/>
+                  <Funding />
                 </li>
                 {this.renderContent()}
               </ul>

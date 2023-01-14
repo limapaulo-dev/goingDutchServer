@@ -39,7 +39,7 @@ passport.use(
       } else {
         //user do not exist
         //console.log('new user created');
-        const user = await new User({ googleId: profile.id }).save();
+        const user = await new User({ googleId: profile.id, googleId: profile.id }).save();
         done(null, user);
       }
     }
