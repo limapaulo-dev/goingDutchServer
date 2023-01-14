@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Funding from './Funding';
 
 class Header extends Component {
   renderContent() {
@@ -43,13 +44,14 @@ class Header extends Component {
               {/* <ul className="right hide-on-med-and-down"> */}
               <ul className="right">
                 <li>
-                  <a href="nightmode.html">funding</a>
-                </li>
-                <li>
                   <a href="about.html">about</a>
                 </li>
                 <li>
                   <a href="contact.html">contact</a>
+                </li>
+                <li>
+                  {/* <a href="funding.html">funding</a> */}
+                  <Funding/>
                 </li>
                 {this.renderContent()}
               </ul>
