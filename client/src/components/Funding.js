@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 // import { Link } from 'react-router-dom';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 class Funding extends Component {
   render() {
     return (
-      <StripeCheckout name="Going Dutch" currency="USD" panelLabel="Tip in" description="Help fund this project with $1.00" image="goingDutchCirc.svg" amount={100} token={(token) => console.log(token)} stripeKey={process.env.REACT_APP_STRIPE_KEY}>
+      <StripeCheckout 
+      name="Going Dutch" 
+      currency="USD" 
+      panelLabel="Fake tip in ;)" 
+      description="This is just a pay system demo" 
+      image="goingDutchCirc.svg" 
+      amount={100} 
+      token={(token) => this.props.handleToken(token)} 
+      stripeKey={process.env.REACT_APP_STRIPE_KEY}>
         <button className="btn waves-effect waves-light deep-orange darken-1">funding</button>
       </StripeCheckout>
     );
   }
 }
 
-export default Funding;
+export default connect(null, actions)(Funding);

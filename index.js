@@ -3,7 +3,9 @@ const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const keys = require('./config/keys');
 const authRoutes = require('./routes/authRoutes');
+const stripeRoutes = require('./routes/stripeRoutes');
 const passport = require('passport');
+const bodyParser = require('body-parser');
 require('./models/User');
 require('./services/passport');
 
@@ -12,6 +14,9 @@ mongoose.connect(keys.mongoURI);
 
 // express app
 const app = express();
+
+//body-parser - parses post requests into json data
+app.use(bodyParser.json());
 
 //cookie session library
 app.use(
@@ -26,6 +31,7 @@ app.use(passport.session());
 
 //authRoutes
 authRoutes(app);
+stripeRoutes(app);
 
 // dynamic port
 const PORT = process.env.PORT || 5000;
