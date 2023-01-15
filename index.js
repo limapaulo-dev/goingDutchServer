@@ -33,6 +33,18 @@ app.use(passport.session());
 authRoutes(app);
 stripeRoutes(app);
 
+//check if we are in thr production env
+if (process.env.NODE_ENV == 'production') {
+  //express will provide production assets
+  app.use(express.static('client/build'));
+  
+  //express will provide the index.html
+  const path = require('path')
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  });
+}
+
 // dynamic port
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
