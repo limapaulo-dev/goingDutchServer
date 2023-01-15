@@ -3,6 +3,26 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Funding from './Funding';
 
+const checkPatron = (userPatron) => {
+  if (userPatron) {
+    return (
+      <li>
+        <a className="btn waves-effect waves-light deep-green darken-1 white-text" href="/api/logout">
+          logout
+        </a>
+      </li>
+    );
+  } else {
+    return (
+      <li>
+        <a className="btn waves-effect waves-light white deep-orange-text text-darken-1" href="/api/logout">
+          logout
+        </a>
+      </li>
+    );
+  }
+};
+
 class Header extends Component {
   renderContent() {
     switch (this.props.auth) {
@@ -18,11 +38,7 @@ class Header extends Component {
         );
       default:
         return (
-          <li>
-            <a className="btn waves-effect waves-light white deep-orange-text text-darken-1" href="/api/logout">
-              logout
-            </a>
-          </li>
+          checkPatron(this.props.auth.userPatron)
         );
     }
   }

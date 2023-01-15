@@ -19,25 +19,28 @@ module.exports = (app) => {
     console.log('this is the card name: ', req.body.card.name);
     console.log('this is the id: ', req.body.id);
 
-    console.log('this is the user: ', req.user);
+    console.log('is the user logged: ', req.user);
 
     //check if user is logged in
     if (req.user !== undefined) {
-      req.user.userPatreon = true;
+      console.log('user is logged in');
+      req.user.userPatron = true;
       const user = await req.user.save();
-    }
-
-    const existingUser = await User.findOne({ userEmail: req.body.card.name });
-    
-    if (existingUser) {
-      //user exist
-      console.log('user already exists');
-      console.log('adding patreon status');
-      const user = await existingUser({ userPatreon: true }).save();
     } else {
-      //user do not exist
-      console.log('new user created with patreon status');
-      const user = await new User({ userEmail: req.body.card.name, userPatreon: true }).save();
+      //check if user already exist
+      const existingUser = await User.findOne({ userEmail: req.body.card.name });
+
+      if (existingUser) {
+        //user exist
+        console.log('user already exists');
+        console.log(existingUser);
+        console.log('adding patron status');
+        existingUser({ userPatron: true }).save();
+      } else {
+        //user do not exist
+        console.log('new user created with patron status');
+        const user = await new User({ userEmail: req.body.card.name, userPatron: true }).save();
+      }
     }
   });
 };
