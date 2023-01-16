@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "going dutch server",
   "main": "index.js",
-  "engines": {
-    "node": "18.12.1",
-    "npm": "8.19.2"
-  },
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
@@ -36,5 +32,9 @@
     "passport-google-oauth20": "^2.0.0",
     "passport-linkedin-oauth2": "^2.0.0",
     "stripe": "^11.6.0"
+  },
+  "engines": {
+    "node": "18.12.1",
+    "npm": "8.19.2"
   }
 }
