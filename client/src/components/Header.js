@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Funding from './Funding';
 
 const checkPatron = (userPatron) => {
   if (userPatron) {
     return (
       <li>
-        <a className="btn waves-effect waves-light deep-green darken-1 white-text" href="/api/logout">
-          logout
-        </a>
+        <a href="/privacy">privacy</a>
       </li>
     );
   } else {
@@ -31,15 +28,11 @@ class Header extends Component {
       case false:
         return (
           <li>
-            <a className="btn waves-effect waves-light deep-orange darken-1" href="/auth/google">
-              login
-            </a>
+            <a href="/login">login</a>
           </li>
         );
       default:
-        return (
-          checkPatron(this.props.auth.userPatron)
-        );
+        return checkPatron(this.props.auth.userPatron);
     }
   }
   render() {
@@ -57,19 +50,19 @@ class Header extends Component {
               {/* <ul className="right hide-on-med-and-down"> */}
               <ul className="right">
                 <li>
-                  <a href="/privacy">privacy</a>
-                </li>
-                <li>
                   <a href="/about">about</a>
                 </li>
                 <li>
-                  <a href="/contact">contact</a>
+                  <a href="/privacy">privacy</a>
                 </li>
                 <li>
-                  {/* <a href="funding.html">funding</a> */}
-                  <Funding />
+                  <a href="/donate">donate</a>
                 </li>
-                {this.renderContent()}
+                <li>
+                  {/* this one should change based on the user being logged in ot not */}
+                  <a href="/login">login</a>
+                  {/* <a href="/logout">logout</a> */}
+                </li>
               </ul>
               {/* <ul className="sidenav" id="mobile-demo">
                 <li>

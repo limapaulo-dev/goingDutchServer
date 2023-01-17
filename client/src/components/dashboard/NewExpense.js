@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
-class Main extends Component {
+class Landing extends Component {
   renderContent() {}
   render() {
     return (
       <main className="container valign-wrapper center-align">
         <div className="row">
           <div className="col s12">
-            <h3>going dutch</h3>
+            <h3>New Expense</h3>
           </div>
           <div className="col s12">
-            <h4 className="col s12">share your experiences and expenses</h4>
+            <p className="col s12">This should be created from a template or just blank</p>
+            <p className="col s12">Each expense group should be a separated card</p>
           </div>
         </div>
       </main>
@@ -19,10 +19,4 @@ class Main extends Component {
   }
 }
 
-// function mapStateToProps(state) {
-//   return { auth: state.auth };
-// }
-
-// export default connect(mapStateToProps)(Landing);
-
-export default Main;
+export default Landing;

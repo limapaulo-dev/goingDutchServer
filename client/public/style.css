@@ -7,3 +7,7 @@ html, body {
 .btn {
   text-transform: none !important;
 }
+
+.googleOAuth {
+  font-family: 'Roboto', sans-serif;
+}

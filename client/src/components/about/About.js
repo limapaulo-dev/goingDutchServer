@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 
-class Landing extends Component {
+class About extends Component {
   renderContent() {}
   render() {
     return (
       <main className="container valign-wrapper center-align">
         <div className="row">
           <div className="col s12">
-            <h3>Going Dutch</h3>
+            <h3>About this project</h3>
           </div>
           <div className="col s12">
             <h4 className="col s12">Share your experiences and expenses</h4>
+            <p className="col s12">contact information</p>
+            
           </div>
         </div>
       </main>
@@ -18,4 +20,4 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+export default About;

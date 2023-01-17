@@ -5,8 +5,13 @@ import * as actions from '../actions';
 
 import Header from './Header';
 import Landing from './Landing';
-const Dashboard = () => <h2>Dashboard</h2>;
-const NewBudget = () => <h2>New Budget</h2>;
+import Donate from './donate/Donate';
+import Login from './auth/Login';
+import Logout from './auth/Logout';
+import About from './about/About';
+import Privacy from './privacy/Privacy';
+import Dashboard from './dashboard/Dashboard';
+import NewExpense from './dashboard/NewExpense';
 
 class App extends Component {
   componentDidMount() {
@@ -18,10 +23,15 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <div>
-            <Header />
+            <Header/>
             <Route exact path="/" component={Landing}></Route>
             <Route exact path="/dashboard" component={Dashboard}></Route>
-            <Route path="/dashboard/new" component={NewBudget}></Route>
+            <Route path="/dashboard/new" component={NewExpense}></Route>
+            <Route path="/donate" component={Donate}></Route>
+            <Route path="/login" component={Login}></Route>
+            <Route path="/logout" component={Logout}></Route>
+            <Route path="/about" component={About}></Route>
+            <Route path="/privacy" component={Privacy}></Route>
           </div>
         </BrowserRouter>
       </div>

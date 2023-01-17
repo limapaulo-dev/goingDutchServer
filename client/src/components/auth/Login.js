@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 
-class Landing extends Component {
+class Login extends Component {
   renderContent() {}
   render() {
     return (
       <main className="container valign-wrapper center-align">
         <div className="row">
           <div className="col s12">
-            <h3>Going Dutch</h3>
+            <h3>Login</h3>
           </div>
           <div className="col s12">
-            <h4 className="col s12">Share your experiences and expenses</h4>
+            <h4 className="col s12">Continue with Google button</h4>
+            <h4 className="col s12">Add more auth options (linkedin, github, spotify)</h4>
           </div>
         </div>
       </main>
@@ -18,4 +19,4 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+export default Login;
