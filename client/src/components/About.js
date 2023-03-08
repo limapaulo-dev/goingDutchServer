@@ -12,7 +12,6 @@ class About extends Component {
           <div className="col s12">
             <h4 className="col s12">Share your experiences and expenses</h4>
             <p className="col s12">contact information</p>
-            
           </div>
         </div>
       </main>

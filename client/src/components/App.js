@@ -5,13 +5,13 @@ import * as actions from '../actions';
 
 import Header from './Header';
 import Landing from './Landing';
-import Donate from './donate/Donate';
-import Login from './auth/Login';
-import Logout from './auth/Logout';
-import About from './about/About';
-import Privacy from './privacy/Privacy';
-import Dashboard from './dashboard/Dashboard';
-import NewExpense from './dashboard/NewExpense';
+import Donate from './Donate';
+import Login from './Login';
+// import Logout from './auth/Logout';
+import About from './About';
+import Privacy from './Privacy';
+import Dashboard from './Dashboard';
+import NewExpense from './NewExpense';
 
 class App extends Component {
   componentDidMount() {
@@ -26,12 +26,12 @@ class App extends Component {
             <Header/>
             <Route exact path="/" component={Landing}></Route>
             <Route exact path="/dashboard" component={Dashboard}></Route>
-            <Route path="/dashboard/new" component={NewExpense}></Route>
-            <Route path="/donate" component={Donate}></Route>
-            <Route path="/login" component={Login}></Route>
-            <Route path="/logout" component={Logout}></Route>
-            <Route path="/about" component={About}></Route>
-            <Route path="/privacy" component={Privacy}></Route>
+            <Route exact path="/dashboard/new" component={NewExpense}></Route>
+            <Route exact path="/donate" component={Donate}></Route>
+            <Route exact path="/login" component={Login}></Route>
+            {/* <Route path="/logout" component={Logout}></Route> */}
+            <Route exact path="/about" component={About}></Route>
+            <Route exact path="/privacy" component={Privacy}></Route>
           </div>
         </BrowserRouter>
       </div>

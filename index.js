@@ -2,11 +2,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const keys = require('./config/keys');
-const authRoutes = require('./routes/authRoutes');
-const stripeRoutes = require('./routes/stripeRoutes');
+
 const passport = require('passport');
 const bodyParser = require('body-parser');
 require('./models/User');
+require('./models/Budget');
 require('./services/passport');
 
 //connect MongoDB
@@ -29,9 +29,10 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-//authRoutes
-authRoutes(app);
-stripeRoutes(app);
+//authRoutes - shorthand
+require('./routes/authRoutes')(app);
+require('./routes/stripeRoutes')(app);
+require('./routes/budgetRoutes')(app);
 
 //check if we are in thr production env
 if (process.env.NODE_ENV == 'production') {

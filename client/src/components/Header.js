@@ -32,7 +32,13 @@ class Header extends Component {
           </li>
         );
       default:
-        return checkPatron(this.props.auth.userPatron);
+        return (
+          <li>
+            <a className="btn waves-effect waves-light white deep-orange-text text-darken-1" href="/api/logout">
+              logout
+            </a>
+          </li>
+        );
     }
   }
   render() {
@@ -60,7 +66,7 @@ class Header extends Component {
                 </li>
                 <li>
                   {/* this one should change based on the user being logged in ot not */}
-                  <a href="/login">login</a>
+                  {this.renderContent()}
                   {/* <a href="/logout">logout</a> */}
                 </li>
               </ul>

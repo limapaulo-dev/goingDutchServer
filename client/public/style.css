@@ -8,6 +8,11 @@ html, body {
   text-transform: none !important;
 }
 
-.googleOAuth {
+.googleBtn {
   font-family: 'Roboto', sans-serif;
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
 }
+

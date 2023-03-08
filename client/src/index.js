@@ -7,6 +7,10 @@ import reduxThunk from 'redux-thunk'
 import App from './components/App';
 import reducers from './reducers'
 
+//temp testing route
+import axios from 'axios';
+window.axios = axios;
+
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
 ReactDOM.render(
@@ -15,5 +19,4 @@ ReactDOM.render(
   </Provider>,
   document.querySelector('#root')
 );
-
 //console.log('ENV: ', process.env.NODE_ENV)
