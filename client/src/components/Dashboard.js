@@ -13,6 +13,10 @@ class Dashboard extends Component {
             <h4 className="col s12">All the Shared Expenses created go here</h4>
             <h4 className="col s12">button for new shared expense +</h4>
           </div>
+          
+          {/* <a className="btn waves-effect waves-light white deep-orange-text text-darken-1" href="/api/budget">
+            New Budget
+          </a> */}
         </div>
       </main>
     );

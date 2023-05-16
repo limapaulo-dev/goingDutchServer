@@ -17,7 +17,7 @@ class Funding extends Component {
       amount={100} 
       token={(token) => this.props.handleToken(token)} 
       stripeKey={process.env.REACT_APP_STRIPE_KEY}>
-        <button className="btn waves-effect waves-light deep-orange darken-1">funding</button>
+        <button className="btn waves-effect waves-light purple darken-4">Funding</button>
       </StripeCheckout>
     );
   }

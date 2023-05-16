@@ -2,23 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-const checkPatron = (userPatron) => {
-  if (userPatron) {
-    return (
-      <li>
-        <a href="/privacy">privacy</a>
-      </li>
-    );
-  } else {
-    return (
-      <li>
-        <a className="btn waves-effect waves-light white deep-orange-text text-darken-1" href="/api/logout">
-          logout
-        </a>
-      </li>
-    );
-  }
-};
 
 class Header extends Component {
   renderContent() {
@@ -32,20 +15,30 @@ class Header extends Component {
           </li>
         );
       default:
-        return (
-          <li>
-            <a className="btn waves-effect waves-light white deep-orange-text text-darken-1" href="/api/logout">
-              logout
-            </a>
-          </li>
-        );
+        if (this.props.auth.userPatron) {
+          return (
+            <li>
+              <a className="btn waves-effect waves-light green deep-light-text text-darken-1" href="/api/logout">
+                logout
+              </a>
+            </li>
+          );
+        } else {
+          return (
+            <li>
+              <a className="btn waves-effect waves-light white purple-text text-darken-1" href="/api/logout">
+                logout
+              </a>
+            </li>
+          );
+        }
     }
   }
   render() {
     return (
       <header className="row">
         <nav>
-          <div className="nav-wrapper deep-orange darken-1">
+          <div className="nav-wrapper purple darken-4">
             <div className="col s12">
               <Link to={this.props.auth ? '/dashboard' : '/'} className="valign-wrapper left">
                 Going Dutch
